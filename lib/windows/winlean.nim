@@ -747,7 +747,7 @@ proc getFileSize*(hFile: Handle, lpFileSizeHigh: ptr DWORD): DWORD{.stdcall,
 
 proc mapViewOfFileEx*(hFileMappingObject: Handle, dwDesiredAccess: DWORD,
                       dwFileOffsetHigh, dwFileOffsetLow: DWORD,
-                      dwNumberOfBytesToMap: DWORD,
+                      dwNumberOfBytesToMap: uint,
                       lpBaseAddress: pointer): pointer{.
     stdcall, dynlib: "kernel32", importc: "MapViewOfFileEx".}
 
